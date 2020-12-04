@@ -1,6 +1,11 @@
 COMMODORE 64 - Examples in BASIC and Assembly
 ==============
 
+<p align="left">
+  <img width=60% src="images/c64.jpg">
+</p>
+<span>Photo by <a href="https://unsplash.com/@lorenzoherrera?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Lorenzo Herrera</a> on <a href="https://unsplash.com/s/photos/commodore-64?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+
 ## Installation
 
 1. Download [TMPx](https://style64.org/release/tmpx-v1.1.0-style), the multiplatform cross assembler version of Turbo Macro Pro
