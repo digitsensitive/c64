@@ -1,7 +1,7 @@
 COMMODORE 64 - Examples in 6502 Assembly language
 ==============
 
-<img width=60% src="images/c64Logo.png">
+<img width=100% src="images/c64Logo.png">
 
 ## Installation
 
