@@ -27,6 +27,10 @@ cycle and leaves more complex workflows to fuller featured IDEs, such as Visual 
 native C64. TMPx was the first cross assembler released with full support for the
 syntax of Turbo Macro Pro (i.e. same as the original Turbo Assembler Macro).
 
+#### Documentation
+
+- [Syntax Documentation](http://turbo.style64.org/docs/turbo-macro-pro-tmpx-syntax)
+
 ### VICE
 [VICE](https://vice-emu.sourceforge.io) is a program that runs on a Unix, 
 MS-DOS, Win32, OS/2, BeOS, QNX 4.x, QNX 6.x, Amiga, Syllable or Mac OS X machine
@@ -34,6 +38,10 @@ and executes programs intended for the old 8-bit computers.
 The current version emulates the C64, the C64DTV, the C128, the VIC20, 
 practically all PET models, the PLUS4 and the CBM-II (aka C610/C510).
 An extra emulator is provided for C64 expanded with the CMD SuperCPU.
+
+## Interesting readings
+
+- [Guide to the 6502 Assembly language](https://en.wikibooks.org/wiki/6502_Assembly)
 
 ## Buy me a coffee
 
