@@ -16,7 +16,7 @@ border = $d020
 ; Main Loop
 ; ----------------------------------------------------------
 
-        *=$02a7                ; sys 679
+        *=$02a7                 ; sys 679
 
-loop    #setBorderColor 2      ; set border color to red
+loop    #setBorderColor 2       ; set border color to red
         jmp loop

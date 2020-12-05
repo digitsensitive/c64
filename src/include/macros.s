@@ -4,15 +4,13 @@
 ; Macros
 ; ==========================================================
 
-.include "src/include/constants.s"
-
 ; ----------------------------------------------------------
 ; Set the border color using a hexadecimal value between $00 - $FF
 ; The X-register is a 8-bit-register with a value between 0 - 255
 ; ----------------------------------------------------------
 setBorderColor          .macro 
                         ldx #\1
-                        stx BORDER_COLOR_REGISTER
+                        stx $D020 ; BORDER_COLOR_REGISTER: 53280
                         .endm
 
 setColorOnMemoryMap     .macro
