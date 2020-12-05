@@ -1,4 +1,4 @@
-COMMODORE 64 - Examples in BASIC and Assembly
+COMMODORE 64 - Examples in Assembly
 ==============
 
 <p align="left">
