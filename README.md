@@ -41,7 +41,12 @@ An extra emulator is provided for C64 expanded with the CMD SuperCPU.
 
 ## Interesting readings
 
+- [C64 Memory Map](http://sta.c64.org/cbm64mem.html)
 - [Guide to the 6502 Assembly language](https://en.wikibooks.org/wiki/6502_Assembly)
+- [C64 User's Guide Examples in Machine Language](https://github.com/lacerto/c64_users_guide_examples)
+- [Commodore 64 Architecture by Jim Butterfield](https://www.atarimagazines.com/compute/issue32/112_1_COMMODORE_64_ARCHITECTURE.php)
+- [Dustlayer Tutorials](https://dustlayer.com/tutorials)
+- [Compute! Magazine Archive](https://archive.org/details/compute-magazine)
 
 ## Buy me a coffee
 
