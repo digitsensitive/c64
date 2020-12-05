@@ -1,9 +1,12 @@
 sourceDir := src
-prgDir := bin
+SRCS = $(wildcard $(sourceDir)/*.s)
+
 TMPX := usr/local/bin/tmpx
 
-build:
-	TMPX -i $(sourceDir)/setBorderColor.s -o $(prgDir)/setBorderColor.prg
+all: $(SRCS:.s=.prg)
+
+%.prg : %.s
+	TMPX -i $< -o $@
 
 clean:
-	rm -f $(prgDir)/*.prg
+	rm -f $(sourceDir)/*.prg

@@ -9,6 +9,7 @@ COMMODORE 64 - Examples in 6502 Assembly language
 2. Copy the `tmpx` of your platform (f.e. macOS) to a local folder of your choice
 3. Allow `tmpx` to be executed as program: `sudo chmod +x PATH/tmpx`
 4. Set the path to tmpx in the Makefile
+5. Compile all `*.s` files with `make all`
 
 ## Tools
 
