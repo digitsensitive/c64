@@ -18,6 +18,10 @@ COMMODORE 64 - Examples in 6502 Assembly language
 It aims to provide just the tools a developer needs for a quick code-build-debug
 cycle and leaves more complex workflows to fuller featured IDEs, such as Visual Studio IDE.
 
+#### Extensions
+
+- [Retro Assembler](https://marketplace.visualstudio.com/items?itemName=EngineDesigns.retroassembler)
+
 ### Turbo Macro Pro Cross Assembler (TMPx)
 [TMPx](http://turbo.style64.org) (pronounced "T-M-P cross") is the multiplatform cross assembler version of Turbo Macro Pro, itself derived from the famous Turbo Assembler series for the 
 native C64. TMPx was the first cross assembler released with full support for the
