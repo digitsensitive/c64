@@ -1,10 +1,11 @@
-COMMODORE 64 - Examples in Assembly
+COMMODORE 64 - Examples in 6502 Assembly language
 ==============
 
-<p align="left">
-  <img width=60% src="images/c64.jpg">
-</p>
-<span>Photo by <a href="https://unsplash.com/@lorenzoherrera?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Lorenzo Herrera</a> on <a href="https://unsplash.com/s/photos/commodore-64?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+<div style="color:#cf292c">▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇</div>
+<div style="color:#d86347">▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇</div>
+<div style="color:#f0ca3e">▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇</div>
+<div style="color:#50b14f">▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇</div>
+<div style="color:#199fd8">▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇</div>
 
 ## Installation
 
