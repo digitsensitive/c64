@@ -43,11 +43,11 @@ SPRITE_POINTERS                     = $07F8 ; 2040
 
 
 ; VIC-II COLOR REGISTER (HEX and DECIMAL)
-BORDER_COLOR_REGISTER               = $D020 ; 53280
-BACKGROUND_COLOR                    = $D021 ; 53281
+BORDER_COLOR_REGISTER               = $d020 ; 53280
+BACKGROUND_COLOR                    = $d021 ; 53281
 
 ; COLOR MEMORY MAP / FOREGROUND COLOR (HEX and DECIMAL)
-COLOR_MEMORY_MAP                    = $D800 ; 55296
+COLOR_MEMORY_MAP                    = $d800 ; 55296
 
 ; ----------------------------------------------------------
 ; Sprite
