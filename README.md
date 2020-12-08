@@ -47,6 +47,11 @@ An extra emulator is provided for C64 expanded with the CMD SuperCPU.
 - [Commodore 64 Architecture by Jim Butterfield](https://www.atarimagazines.com/compute/issue32/112_1_COMMODORE_64_ARCHITECTURE.php)
 - [Dustlayer Tutorials](https://dustlayer.com/tutorials)
 - [Compute! Magazine Archive](https://archive.org/details/compute-magazine)
+- [6502 opcodes](http://www.6502.org/tutorials/6502opcodes.html)
+
+## Tools
+
+- [PETSCII Editor](http://petscii.krissz.hu)
 
 ## Buy me a coffee
 
