@@ -1,6 +1,6 @@
 ; ==========================================================
 ; COMMODORE 64 - Examples in 6502 Assembly language
-; © Digitsensitive; digit.sensitivee@gmail.com; 05.12.2020
+; © Digitsensitive; digit.sensitivee@gmail.com; 08.12.2020
 ; How to print a text
 ; ==========================================================
 
@@ -8,7 +8,7 @@
 ; Main Loop
 ; ----------------------------------------------------------
 
-                *=$02a7                 ; sys 679
+        *=$02a7                 ; sys 679
 
 init    ldx #$01
         stx $d020               ; Border color register
@@ -32,14 +32,14 @@ clear   lda #$20                ; spacebar screen code
                                 ; if no -> continue loop
 
         ldx #$00
-text    lda hello,x
+text    lda hello,x             ; take byte by byte
         and #$3f                ; convert to uppercase
-        sta $05BF,x
+        sta $05BF,x             ; store byte to screen area
         inx
-        cpx #26
+        cpx #26                 ; check for end of the string data table
         bne text
 
-loop    jmp loop
+loop    jmp loop                ; endless stupid loop
 
 ; ----------------------------------------------------------
 ; Data
