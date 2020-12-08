@@ -20,12 +20,12 @@
         *=$02a7                 ; sys 679
 
 ; In this example we will display four times the letter "F"
-init    lda #6          ; decimal
+init    lda #6                  ; decimal
         sta $0400
-        lda #$6         ; hexadecimal
+        lda #$6                 ; hexadecimal
         sta $0401
-        lda #$06        ; hexadecimal
+        lda #$06                ; hexadecimal
         sta $0402
-        lda #%0110      ; binary
+        lda #%0110              ; binary
         sta $0403
         rts
