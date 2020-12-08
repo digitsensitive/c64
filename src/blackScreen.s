@@ -27,5 +27,8 @@ clear   lda #$20                ; spacebar screen code
         sta $da00,x
         sta $dae8,x
         inx
-        bne clear
+        bne clear               ; bne = branch on not equal
+                                ; did x turn to zero already? 
+                                ; if yes -> stop loop
+                                ; if no -> continue loop
         rts
