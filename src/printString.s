@@ -21,7 +21,7 @@ clear   lda #$20                ; spacebar screen code
         sta $0600,x
         sta $06e8,x
         lda #$01                ; set foreground to white in Color Ram 
-        sta $d800,x  
+        sta $d800,x
         sta $d900,x
         sta $da00,x
         sta $dae8,x
