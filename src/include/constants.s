@@ -32,14 +32,51 @@ LIGHT_GREY                          = 15
 ; $0400-$07FF, 1024-2047
 ; ----------------------------------------------------------
 SCREEN_MEMORY                       = $0400 ; 1024
-UNUSED_16_BYTES                     = $07E8 ; 2024
-SPRITE_POINTERS                     = $07F8 ; 2040
+UNUSED_16_BYTES                     = $07e8 ; 2024
+SPRITE_POINTERS                     = $07f8 ; 2040
+
+; ----------------------------------------------------------
+; VIC-II Video Display
+; $D000-$D3FF, 53248-54271
+; ----------------------------------------------------------
+
+; sprite horizontal and vertical position registers
+SP0X                                = $d000 ; 53248
+SP0Y                                = $d001 ; 53249
+SP1X                                = $d002 ; 53250
+SP1Y                                = $d003 ; 53251
+SP2X                                = $d004 ; 53252
+SP2Y                                = $d005 ; 53253
+SP3X                                = $d006 ; 53254
+SP3Y                                = $d007 ; 53255
+SP4X                                = $d008 ; 53256
+SP4Y                                = $d009 ; 53257
+SP5X                                = $d00A ; 53258
+SP5Y                                = $d00B ; 53259
+SP6X                                = $d00C ; 53260
+SP6Y                                = $d00D ; 53261
+SP7X                                = $d00E ; 53262
+SP7Y                                = $d00F ; 53263
+
+; most significant bits of sprites 0-7 horizontal positions
+MSIGX                               = $d010 ; 53264
+
+; sprite enable register
+SPRITE_ENABLE_REGISTER              = $d015 ; 53269
+
+; sprite color registers
+SPRITE_0_COLOR_REGISTER             = $d027 ; 53287
+SPRITE_1_COLOR_REGISTER             = $d028 ; 53288
+SPRITE_2_COLOR_REGISTER             = $d029 ; 53289
+SPRITE_3_COLOR_REGISTER             = $d02a ; 53290
+SPRITE_4_COLOR_REGISTER             = $d02b ; 53291
+SPRITE_5_COLOR_REGISTER             = $d02c ; 53292
+SPRITE_6_COLOR_REGISTER             = $d02d ; 53293
+SPRITE_7_COLOR_REGISTER             = $d02e ; 53294
 
 
 
-
-; **********************************************************
-
+; **************
 
 
 ; VIC-II COLOR REGISTER (HEX and DECIMAL)
@@ -49,37 +86,6 @@ BACKGROUND_COLOR                    = $d021 ; 53281
 ; COLOR MEMORY MAP / FOREGROUND COLOR (HEX and DECIMAL)
 COLOR_MEMORY_MAP                    = $d800 ; 55296
 
-; ----------------------------------------------------------
-; Sprite
-; ----------------------------------------------------------
 
 
-; SPRITE HORIZONTAL AND VERTICAL POSITION REGISTERS
-SPRITE_0_HORIZONTAL_POSITION        = $D000 ; 53248
-SPRITE_0_VERTICAL_POSITION          = $D001 ; 53249
-SPRITE_1_HORIZONTAL_POSITION        = $D002 ; 53250
-SPRITE_1_VERTICAL_POSITION          = $D003 ; 53251
-SPRITE_2_HORIZONTAL_POSITION        = $D004 ; 53252
-SPRITE_2_VERTICAL_POSITION          = $D005 ; 53253
-SPRITE_3_HORIZONTAL_POSITION        = $D006 ; 53254
-SPRITE_3_VERTICAL_POSITION          = $D007 ; 53255
-SPRITE_4_HORIZONTAL_POSITION        = $D008 ; 53256
-SPRITE_4_VERTICAL_POSITION          = $D009 ; 53257
-SPRITE_5_HORIZONTAL_POSITION        = $D00A ; 53258
-SPRITE_5_VERTICAL_POSITION          = $D00B ; 53259
-SPRITE_6_HORIZONTAL_POSITION        = $D00C ; 53260
-SPRITE_6_VERTICAL_POSITION          = $D00D ; 53261
-SPRITE_7_HORIZONTAL_POSITION        = $D00E ; 53262
-SPRITE_7_VERTICAL_POSITION          = $D00F ; 53263
 
-SPRITE_ENABLE_REGISTER              = $D015 ; 53269
-
-; SPRITE COLOR REGISTERS
-SPRITE_0_COLOR_REGISTER             = $D027 ; 53287
-SPRITE_1_COLOR_REGISTER             = $D028 ; 53288
-SPRITE_2_COLOR_REGISTER             = $D029 ; 53289
-SPRITE_3_COLOR_REGISTER             = $D02A ; 53290
-SPRITE_4_COLOR_REGISTER             = $D02B ; 53291
-SPRITE_5_COLOR_REGISTER             = $D02C ; 53292
-SPRITE_6_COLOR_REGISTER             = $D02D ; 53293
-SPRITE_7_COLOR_REGISTER             = $D02E ; 53294
