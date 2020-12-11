@@ -52,6 +52,7 @@ An extra emulator is provided for C64 expanded with the CMD SuperCPU.
 
 ## Tools
 
+- [Spritemate](https://www.spritemate.com)
 - [PETSCII Editor](http://petscii.krissz.hu)
 
 ## Buy me a coffee
