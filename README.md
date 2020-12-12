@@ -1,5 +1,4 @@
-COMMODORE 64 - Examples in 6502 Assembly language
-==============
+# COMMODORE 64 - Examples in 6502 Assembly language
 
 <img width=100% src="images/c64Logo.png">
 
@@ -14,7 +13,8 @@ COMMODORE 64 - Examples in 6502 Assembly language
 ## Tools
 
 ### Visual Studio Code
-[Visual Studio Code](https://code.visualstudio.com) is a streamlined code editor with support for development operations like debugging, task running, and version control. 
+
+[Visual Studio Code](https://code.visualstudio.com) is a streamlined code editor with support for development operations like debugging, task running, and version control.
 It aims to provide just the tools a developer needs for a quick code-build-debug
 cycle and leaves more complex workflows to fuller featured IDEs, such as Visual Studio IDE.
 
@@ -23,7 +23,8 @@ cycle and leaves more complex workflows to fuller featured IDEs, such as Visual 
 - [Retro Assembler](https://marketplace.visualstudio.com/items?itemName=EngineDesigns.retroassembler)
 
 ### Turbo Macro Pro Cross Assembler (TMPx)
-[TMPx](http://turbo.style64.org) (pronounced "T-M-P cross") is the multiplatform cross assembler version of Turbo Macro Pro, itself derived from the famous Turbo Assembler series for the 
+
+[TMPx](http://turbo.style64.org) (pronounced "T-M-P cross") is the multiplatform cross assembler version of Turbo Macro Pro, itself derived from the famous Turbo Assembler series for the
 native C64. TMPx was the first cross assembler released with full support for the
 syntax of Turbo Macro Pro (i.e. same as the original Turbo Assembler Macro).
 
@@ -32,10 +33,11 @@ syntax of Turbo Macro Pro (i.e. same as the original Turbo Assembler Macro).
 - [Syntax Documentation](http://turbo.style64.org/docs/turbo-macro-pro-tmpx-syntax)
 
 ### VICE
-[VICE](https://vice-emu.sourceforge.io) is a program that runs on a Unix, 
+
+[VICE](https://vice-emu.sourceforge.io) is a program that runs on a Unix,
 MS-DOS, Win32, OS/2, BeOS, QNX 4.x, QNX 6.x, Amiga, Syllable or Mac OS X machine
 and executes programs intended for the old 8-bit computers.
-The current version emulates the C64, the C64DTV, the C128, the VIC20, 
+The current version emulates the C64, the C64DTV, the C128, the VIC20,
 practically all PET models, the PLUS4 and the CBM-II (aka C610/C510).
 An extra emulator is provided for C64 expanded with the CMD SuperCPU.
 
@@ -66,14 +68,14 @@ Whether you use this project, have learned something from it, or just like it, p
 Copyright (c) 2020 digitsensitive <digit.sensitivee@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal 
-in the Software without restriction, including without limitation the rights 
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
-copies of the Software, and to permit persons to whom the Software is 
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
- copies or substantial portions of the Software.
+copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
