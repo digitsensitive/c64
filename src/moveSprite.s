@@ -74,22 +74,22 @@ input           cmp #87                         ; W - up
                 beq right
                 jmp loop
 
-up		        ldy SP0Y
+up              ldy SP0Y
                 dey
                 sty SP0Y
                 jmp loop
 
-down		    ldy SP0Y
+down            ldy SP0Y
                 iny
                 sty SP0Y
                 jmp loop
 
-left		    ldx SP0X
+left            ldx SP0X
                 dex
                 stx SP0X
                 jmp loop
 
-right		    ldx SP0X
+right           ldx SP0X
                 inx
                 stx SP0X
                 jmp loop
