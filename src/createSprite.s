@@ -42,7 +42,7 @@ build           lda spr0,x                      ; get byte from sprite0+x
                 bne build
 
                 ; set position
-                lda #%00000000		            ; restrict horizontal position to 0-255
+                lda #%00000000                  ; restrict horizontal position to 0-255
                 sta MSIGX
 
                 ; starting sprite location
