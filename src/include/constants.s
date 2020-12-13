@@ -40,7 +40,7 @@ SPRITE_POINTERS                     = $07f8 ; 2040
 ; $D000-$D3FF, 53248-54271
 ; ----------------------------------------------------------
 
-; sprite horizontal and vertical position registers
+; Sprite horizontal and vertical position registers
 SP0X                                = $d000 ; 53248
 SP0Y                                = $d001 ; 53249
 SP1X                                = $d002 ; 53250
@@ -58,13 +58,13 @@ SP6Y                                = $d00D ; 53261
 SP7X                                = $d00E ; 53262
 SP7Y                                = $d00F ; 53263
 
-; most significant bits of sprites 0-7 horizontal positions
+; Most significant bits of sprites 0-7 horizontal positions
 MSIGX                               = $d010 ; 53264
 
-; sprite enable register
+; Sprite enable register
 SPRITE_ENABLE_REGISTER              = $d015 ; 53269
 
-; sprite color registers
+; Sprite color registers
 SPRITE_0_COLOR_REGISTER             = $d027 ; 53287
 SPRITE_1_COLOR_REGISTER             = $d028 ; 53288
 SPRITE_2_COLOR_REGISTER             = $d029 ; 53289
@@ -86,6 +86,11 @@ BACKGROUND_COLOR                    = $d021 ; 53281
 ; COLOR MEMORY MAP / FOREGROUND COLOR (HEX and DECIMAL)
 COLOR_MEMORY_MAP                    = $d800 ; 55296
 
+; ----------------------------------------------------------
+; 8k Operating System ROM
+; $E000-$FFFF, 57344-65535
+; ----------------------------------------------------------
 
-
-
+; Kernal Jump Table
+SCNKEY                              = $ff9f ; 65439
+GETIN                               = $ffe4 ; 65508
