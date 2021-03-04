@@ -91,6 +91,9 @@ COLOR_MEMORY_MAP                    = $d800 ; 55296
 ; $E000-$FFFF, 57344-65535
 ; ----------------------------------------------------------
 
+; Init Screen Line Link Table and Clear the Screen
+CLEAR                               = $e544 ; 58692
+
 ; Kernal Jump Table
 SCNKEY                              = $ff9f ; 65439
 GETIN                               = $ffe4 ; 65508

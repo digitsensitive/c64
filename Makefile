@@ -1,5 +1,5 @@
 sourceDir := src
-SRCS = $(wildcard $(sourceDir)/*.s)
+SRCS = $(wildcard $(sourceDir)/**/*.s)
 
 TMPX := usr/local/bin/tmpx
 
@@ -9,4 +9,4 @@ all: $(SRCS:.s=.prg)
 	TMPX -i $< -o $@
 
 clean:
-	rm -f $(sourceDir)/*.prg
+	rm -f $(sourceDir)/**/*.prg
