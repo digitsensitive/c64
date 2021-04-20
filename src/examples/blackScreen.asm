@@ -4,7 +4,7 @@
 ; How to clear the screen to black
 ; ==========================================================
 
-.include "src/include/constants.s"
+.include "src/include/constants.asm"
 
 ; ----------------------------------------------------------
 ; Main Loop

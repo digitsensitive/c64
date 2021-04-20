@@ -4,7 +4,7 @@
 ; Snake
 ; ==========================================================
 
-.include "src/include/constants.s"
+.include "src/include/constants.asm"
 
 ; ----------------------------------------------------------
 ; Labels

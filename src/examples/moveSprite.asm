@@ -1,10 +1,10 @@
 ; ==========================================================
 ; COMMODORE 64 - Examples in 6502 Assembly language
-; © Digitsensitive; digit.sensitivee@gmail.com; 11.12.2020
-; How to create a sprite
+; © Digitsensitive; digit.sensitivee@gmail.com; 13.12.2020
+; How to move a sprite
 ; ==========================================================
 
-.include "src/include/constants.s"
+.include "src/include/constants.asm"
 
 ; ----------------------------------------------------------
 ; Labels
@@ -56,7 +56,43 @@ build           lda spr0,x                      ; get byte from sprite0+x
 ; Main Loop
 ; ----------------------------------------------------------
 
-loop            jmp loop
+                ; use of the kernal jump table
+loop            jsr SCNKEY                      ; jump to scan keyboard
+                jsr GETIN                       ; jump to get a character
+
+; ----------------------------------------------------------
+; Evaluate Input
+; ----------------------------------------------------------
+
+input           cmp #87                         ; W - up
+                beq up
+                cmp #83                         ; S - down
+                beq down
+                cmp #65                         ; A - left
+                beq left
+                cmp #68                         ; D - right
+                beq right
+                jmp loop
+
+up              ldy SP0Y
+                dey
+                sty SP0Y
+                jmp loop
+
+down            ldy SP0Y
+                iny
+                sty SP0Y
+                jmp loop
+
+left            ldx SP0X
+                dex
+                stx SP0X
+                jmp loop
+
+right           ldx SP0X
+                inx
+                stx SP0X
+                jmp loop
 
 ; ----------------------------------------------------------
 ; Data

@@ -4,7 +4,7 @@
 ; How to use a macro
 ; ==========================================================
 
-.include "src/include/macros.s"
+.include "src/include/macros.asm"
 
 ; ----------------------------------------------------------
 ; Labels

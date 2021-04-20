@@ -1,11 +1,11 @@
 sourceDir := src
-SRCS = $(wildcard $(sourceDir)/**/*.s)
+SRCS = $(wildcard $(sourceDir)/**/*.asm)
 
 TMPX := usr/local/bin/tmpx
 
-all: $(SRCS:.s=.prg)
+all: $(SRCS:.asm=.prg)
 
-%.prg : %.s
+%.prg : %.asm
 	TMPX -i $< -o $@
 
 clean:

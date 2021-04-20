@@ -4,7 +4,7 @@
 ; How to draw a character at a specific location on screen
 ; ==========================================================
 
-.include "src/include/macros.s"
+.include "src/include/macros.asm"
 
 ; ----------------------------------------------------------
 ; Main Loop
