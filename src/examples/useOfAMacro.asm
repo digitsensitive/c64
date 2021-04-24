@@ -5,7 +5,7 @@
 ; ==========================================================
 
 .include "src/include/constants.asm"
-.include "src/include/macros.asm"
+.include "src/include/macros-general.asm"
 
 ; ----------------------------------------------------------
 ; Labels

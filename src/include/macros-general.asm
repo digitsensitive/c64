@@ -1,8 +1,13 @@
 ; ==========================================================
 ; COMMODORE 64 - Examples in 6502 Assembly language
 ; © Digitsensitive; digit.sensitivee@gmail.com
-; Macros
+; General Macros
 ; ==========================================================
+
+; ----------------------------------------------------------
+; Poke selected address with value
+; Example: #poke BORDER_COLOR_REGISTER,RED
+; ----------------------------------------------------------
 
 poke                    .macro    
                         lda #\2
