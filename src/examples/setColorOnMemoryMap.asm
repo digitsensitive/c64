@@ -1,6 +1,6 @@
 ; ==========================================================
 ; COMMODORE 64 - Examples in 6502 Assembly language
-; © Digitsensitive; digit.sensitivee@gmail.com; 05.12.2020
+; © Digitsensitive; digit.sensitivee@gmail.com
 ; How to set the color on the memory map
 ; ==========================================================
 
@@ -19,9 +19,9 @@ border = $d020
 
         *=$02a7                 ; sys 679
 
-init    #setBorderColor CYAN
-        #setColorOnMemoryMap GREEN,COLOR_MEMORY_MAP
-        #setColorOnMemoryMap YELLOW,COLOR_MEMORY_MAP+1
+init    #poke BORDER_COLOR_REGISTER,CYAN
+        #poke COLOR_MEMORY_MAP,GREEN
+        #poke COLOR_MEMORY_MAP+1,YELLOW
         lda #$04                ; D
         sta SCREEN_MEMORY
         lda #$05                ; E

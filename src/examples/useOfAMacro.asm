@@ -1,9 +1,10 @@
 ; ==========================================================
 ; COMMODORE 64 - Examples in 6502 Assembly language
-; © Digitsensitive; digit.sensitivee@gmail.com; 05.12.2020
+; © Digitsensitive; digit.sensitivee@gmail.com
 ; How to use a macro
 ; ==========================================================
 
+.include "src/include/constants.asm"
 .include "src/include/macros.asm"
 
 ; ----------------------------------------------------------
@@ -18,5 +19,5 @@ border = $d020
 
         *=$02a7                 ; sys 679
 
-loop    #setBorderColor 2       ; set border color to red
+loop    #poke BORDER_COLOR_REGISTER,RED
         jmp loop
