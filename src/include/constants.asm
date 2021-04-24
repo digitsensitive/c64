@@ -1,6 +1,6 @@
 ; ==========================================================
 ; COMMODORE 64 - Examples in 6502 Assembly language
-; © Digitsensitive; digit.sensitivee@gmail.com; 05.12.2020
+; © Digitsensitive; digit.sensitivee@gmail.com
 ; Constants
 ; ==========================================================
 
@@ -61,8 +61,18 @@ SP7Y                                = $d00F ; 53263
 ; Most significant bits of sprites 0-7 horizontal positions
 MSIGX                               = $d010 ; 53264
 
+; Raster: Read Current Raster Scan Line
+RASTER                              = $d012 ; 53266
+
 ; Sprite enable register
 SPRITE_ENABLE_REGISTER              = $d015 ; 53269
+
+; Multicolor registers
+SPRITE_MULTICOLOR_REGISTERS         = $d01c ; 53276
+
+; Sprite Multicolor
+SPMC0                               = $d025 ; 53285
+SPMC1                               = $d026 ; 53286
 
 ; Sprite color registers
 SPRITE_0_COLOR_REGISTER             = $d027 ; 53287

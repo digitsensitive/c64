@@ -1,6 +1,6 @@
 ; ==========================================================
 ; COMMODORE 64 - Examples in 6502 Assembly language
-; © Digitsensitive; digit.sensitivee@gmail.com; 05.12.2020
+; © Digitsensitive; digit.sensitivee@gmail.com
 ; How to select a color from an include file
 ; ==========================================================
 

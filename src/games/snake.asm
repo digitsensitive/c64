@@ -1,6 +1,6 @@
 ; ==========================================================
 ; COMMODORE 64 - Examples in 6502 Assembly language
-; © Digitsensitive; digit.sensitivee@gmail.com; 14.12.2020
+; © Digitsensitive; digit.sensitivee@gmail.com
 ; Snake
 ; ==========================================================
 
