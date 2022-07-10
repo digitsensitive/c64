@@ -14,6 +14,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [0.0.3] - 2022-07-10
+
+### Changed
+
+- Update `Makefile`
+- Update `README.md`
+- Add tmpx to vendors
+
+---
+
 ## [0.0.2] - 2021-03-04
 
 ### Added
@@ -25,6 +35,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Move examples to folder examples
 - Update `SRCS` in Makefile to convert all `*.s` files in `src` and it's folders
 - Update `README.md`
+
+---
 
 ## [0.0.1] - 2020-12-12
 
