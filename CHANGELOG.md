@@ -18,7 +18,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 
-- Create Score example
+- Add Score in examples folder
+- Add Bubble Sort in Algorithms
 
 ### Changed
 
