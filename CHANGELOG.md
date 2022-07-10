@@ -16,6 +16,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [0.0.3] - 2022-07-10
 
+### Added
+
+- Create Score example
+
 ### Changed
 
 - Update `Makefile`
