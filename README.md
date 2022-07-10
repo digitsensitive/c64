@@ -8,8 +8,9 @@
 2. Copy the `tmpx` of your platform (f.e. macOS) to a local folder of your choice
 3. Allow `tmpx` to be executed as program: `sudo chmod +x PATH/tmpx`
 4. Set the path to tmpx in the Makefile
-5. Compile all `*.s` files in `src` with `make all`
-6. Delete all `*.prg` files in `src` with `make clean`
+5. Compile all `*.asm` files to `*.prg` files in `src` with `make convert`
+6. Load specific `*.prg` into C64 Emulator with `make load name={PATH_TO_PROGRAM_NAME}` (f.e. PATH_TO_PROGRAM_NAME = examples/printString.prg)
+7. Delete all `*.prg` files in `src` with `make clean`
 
 ## Tools
 
