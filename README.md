@@ -27,7 +27,7 @@ cycle and leaves more complex workflows to fuller featured IDEs, such as Visual 
 native C64. TMPx was the first cross assembler released with full support for the
 syntax of Turbo Macro Pro (i.e. same as the original Turbo Assembler Macro).
 
-### C1541
+### C1541
 
 [C1541](https://vice-emu.sourceforge.io/vice_14.html) is a stand-alone disk image maintenance utility.
 This tool is installed together with VICE.
