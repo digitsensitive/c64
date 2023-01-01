@@ -7,6 +7,12 @@
 
         *=$c000         ; sys 49152 [up to $cfff (53247), 4000 bytes]
 
+; input keys
+KEY_W               = 87
+KEY_A               = 65
+KEY_S               = 83
+KEY_D               = 68
+
 ; ----------------------------------------------------------
 ; Init
 ; ----------------------------------------------------------
@@ -17,13 +23,27 @@ init    ; Set border and background color to black
         stx $d021               ; Background color
 
         jsr cls                 ; clear screen
+
+        ; set current direction to right
+        lda #$01
+        sta dir
+        lda #$00
+        sta dir+1
+
+        ; set snake start position
+        lda #13
+        sta snake
+        lda #08
+        sta snake+1
+
         ; TODO: add_new_food
         
 ; ----------------------------------------------------------
 ; Main Loop
 ; ----------------------------------------------------------
 
-loop    ; TODO: check input
+loop    jsr input
+
         lda #100
 delay   cmp $d012
         bne delay
@@ -49,15 +69,68 @@ delay   cmp $d012
 ; Input
 ; ----------------------------------------------------------
 
-input   ; TODO: Input
+input   lda dir
+        sta tmpdir
+        lda dir+1
+        sta tmpdir+1
+
+        jsr $ff9f ; 65439, jump to scan keyboard
+        jsr $ffe4 ; 65508, jump to get a character
+
+        ; cmp (short for "CoMPare")
+        ; compares contents of accumulator against the specified operand 
+        cmp #KEY_W
+        beq uk
+        cmp #KEY_S
+        beq dk
+        cmp #KEY_A
+        beq lk
+        cmp #KEY_D
+        beq rk
+
+        ; TODO:
+        ; if dir.x == -lastDir.x or dir.y == -lastDir.y then
+        ;        dir = lastDir
+	; end
+
+        rts
+
+uk      ; set current direction to up
+        lda #$00
+        sta dir
+        lda #$02
+        sta dir+1
+        rts
+
+dk      ; set current direction to down
+        lda #$00
+        sta dir
+        lda #$01
+        sta dir+1
+        rts
+
+lk      ; set current direction to left
+        lda #$02
+        sta dir
+        lda #$00
+        sta dir+1
+        rts
+
+rk      ; set current direction to right
+        lda #$01
+        sta dir
+        lda #$00
+        sta dir+1
         rts
 
 ; ----------------------------------------------------------
 ; Update
 ; ----------------------------------------------------------
 
-update  ; TODO: Update
-        jsr uscore
+update  clc
+        lda snake
+        adc #1
+        sta snake
         rts
 
 ; ----------------------------------------------------------
@@ -65,7 +138,7 @@ update  ; TODO: Update
 ; ----------------------------------------------------------
 
 draw    ; TODO: Draw Food
-        ; TODO: Draw Snake
+        jsr dsnake
         jsr dscore
         ; TODO: Draw version of Game
         rts
@@ -91,7 +164,6 @@ cls     lda #$20                ; spacebar screen code
                                 ; if no -> continue loop
         rts
 
-
 ; ----------------------------------------------------------
 ; Update Score
 ; ----------------------------------------------------------
@@ -100,7 +172,7 @@ uscore  sed ; set decimal mode
 
         clc     
         lda score
-        adc #$10
+        adc #1
         sta score
         lda score+1
         adc #$00
@@ -110,6 +182,18 @@ uscore  sed ; set decimal mode
         sta score+2
 
         cld ; clear decimal mode
+
+; ----------------------------------------------------------
+; Draw Snake
+; ----------------------------------------------------------
+
+dsnake  ldx snake
+        lda #$80
+        sta $0400,x
+        dex
+        lda #$20                ; spacebar screen code
+        sta $0400,x
+        rts
 
 ; ----------------------------------------------------------
 ; Draw Score
@@ -147,7 +231,16 @@ plotd   clc
 ; Data and Variables
 ; ----------------------------------------------------------
 
+; Current direction
+; Location of bytes from low to high: dir,dir+1
+; dir   => x value
+; dir+1 => y value
+dir     .byte 0,0
+tmpdir  .byte 0,0
+
 time    .byte 0,0
+
+snake   .byte 0,0
 
 ; Using Binary Coded Decimal (BCD)
 ; Location of bytes from low to high: score,score+1,score+2
