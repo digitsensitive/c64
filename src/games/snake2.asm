@@ -37,18 +37,6 @@ delay   cmp $d012
         adc #$01
         sta time
 
-        ; update score
-        clc     
-        lda score
-        adc #1
-        sta score
-        bcc ahead1
-        inc score+1
-ahead1
-        ; Move cursor to upper left-hand corner
-        lda #19                 ; CLR HOME
-        jsr $ffd2               ; Send char in accumulator screen
-
         jsr update
         jsr draw
         ; --------------
@@ -56,7 +44,6 @@ ahead1
         dec $d020
 
         jmp loop
-
 
 ; ----------------------------------------------------------
 ; Input
@@ -70,6 +57,7 @@ input   ; TODO: Input
 ; ----------------------------------------------------------
 
 update  ; TODO: Update
+        jsr uscore
         rts
 
 ; ----------------------------------------------------------
@@ -91,7 +79,7 @@ cls     lda #$20                ; spacebar screen code
         sta $0500,x             ; area 2: fill with 256 spacebar characters
         sta $0600,x             ; area 3: fill with 256 spacebar characters
         sta $06e8,x             ; area 4: fill with 256 spacebar characters
-        lda #$00                ; set foreground to black in color ram
+        lda #$01                ; set foreground to white in color ram
         sta $d800,x
         sta $d900,x
         sta $da00,x
@@ -103,13 +91,56 @@ cls     lda #$20                ; spacebar screen code
                                 ; if no -> continue loop
         rts
 
+
+; ----------------------------------------------------------
+; Update Score
+; ----------------------------------------------------------
+
+uscore  sed ; set decimal mode
+
+        clc     
+        lda score
+        adc #$10
+        sta score
+        lda score+1
+        adc #$00
+        sta score+1
+        lda score+2
+        adc #$00
+        sta score+2
+
+        cld ; clear decimal mode
+
 ; ----------------------------------------------------------
 ; Draw Score
 ; ----------------------------------------------------------
 
-dscore  ldx score
-        lda score+1
-        jsr $bdcd
+dscore  ldx #5 ; screen offset start from right-most value
+        ldy #0 ; score byte index
+
+sloop   lda score,y
+        pha
+        and #$0f
+        jsr plotd
+
+        pla
+        lsr a 
+        lsr a
+        lsr a
+        lsr a
+        jsr plotd
+
+        iny
+        cpy #3
+        bne sloop
+
+        rts
+
+; plot digit   
+plotd   clc
+        adc #48
+        sta $0400,x
+        dex
         rts
 
 ; ----------------------------------------------------------
@@ -117,4 +148,8 @@ dscore  ldx score
 ; ----------------------------------------------------------
 
 time    .byte 0,0
-score   .byte 0,0
+
+; Using Binary Coded Decimal (BCD)
+; Location of bytes from low to high: score,score+1,score+2
+; Each location stores a two-digit value
+score   .byte 0,0,0
