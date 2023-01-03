@@ -29,11 +29,11 @@ loop    jsr add
 ; perform addition (Info: 256 * high_byte + low_byte)
 
 add     clc             ; always clear carry before addition
-        lda #<num1      ; load lo-byte of number 1
-        adc #<num2      ; add lo-byte of number 2 to lo-byte of number 1
+        lda num1        ; load lo-byte of number 1
+        adc num2        ; add lo-byte of number 2 to lo-byte of number 1
         sta result      ; store lo-byte
-        lda #>num1      ; load hi-byte of number 1
-        adc #>num2      ; add hi-byte of number 2 to hi-byte of number 1
+        lda num1+1      ; load hi-byte of number 1
+        adc num2+1      ; add hi-byte of number 2 to hi-byte of number 1
         sta result+1    ; store hi-byte
         rts
 
@@ -46,6 +46,6 @@ print   ldx result
 
 ; data
 
-num1    .byte $01,$00     ; 16-bit number
-num2    .byte $01,$00     ; 16-bit number
+num1    .byte $FF,$00     ; 16-bit number
+num2    .byte $05,$00     ; 16-bit number
 result  .byte $00,$00     ; 16-bit number
