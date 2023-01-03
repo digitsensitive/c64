@@ -42,6 +42,8 @@ print   ldx result
         jsr $bdcd
         rts
 
+; data
+
 num1    .byte $FD         ; 8-bit number
 num2    .byte $02         ; 8-bit number
 result  .byte $00         ; 8-bit number
