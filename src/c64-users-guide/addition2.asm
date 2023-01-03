@@ -26,7 +26,7 @@ clhome  lda #147        ; load accumulator with char CLR HOME
 loop    jsr add
         jsr print
 
-; perform addition (Info: 256 * high_byte + low_byte)
+; perform addition
 
 add     clc             ; always clear carry before addition
         lda num1        ; load lo-byte of number 1
