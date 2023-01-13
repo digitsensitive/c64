@@ -9,6 +9,12 @@
 ; So the maximum number is 255 (a total of 256 values, 0-255).
 ; Adding 1 to 255 will wrap to zero.
 ;
+; Remember:
+; * There is no way to add without carry
+; * Decide if binary or decimal mode: In this example we use
+;   the binary mode, so you should clear the decimal mode bit/flag with
+;   the instruction 'cld' before doing any addition
+;
 ; Here is the example in BASIC:
 ; PRINT 2+2
 ; ==========================================================
@@ -29,7 +35,8 @@ loop    jsr add
 
 ; perform addition
 
-add     clc             ; always clear carry before addition
+add     clc             ; clear carry bit
+        cld             ; clear decimal bit
         lda op1         ; load operand 1 in accumulator
         adc op2         ; add operand 2 to operand 1
         sta res         ; store result at address res
