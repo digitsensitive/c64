@@ -26,12 +26,11 @@
 cls     lda #147        ; load accumulator with char CLR HOME
         jsr $ffd2       ; CHROUT, kernal rountine
                         ; send character in accumulator to screen
-        
+
 ; main loop
 
 loop    jsr add
         jsr print
-
 
 ; perform addition
 
