@@ -30,20 +30,20 @@ loop    jsr add
 ; perform addition
 
 add     clc             ; always clear carry before addition
-        lda num1        ; load number 1
-        adc num2        ; add number 2 to number 1
-        sta result      ; store the result
+        lda op1         ; load operand 1 in accumulator
+        adc op2         ; add operand 2 to operand 1
+        sta res         ; store result at address res
         rts
 
 ; print result to screen using LINPRT routine
 
-print   ldx result
+print   ldx res
         lda #$00
         jsr $bdcd
         rts
 
 ; data
 
-num1    .byte $FD         ; 8-bit number
-num2    .byte $02         ; 8-bit number
-result  .byte $00         ; 8-bit number
+op1     .byte $FD         ; 8-bit number
+op2     .byte $02         ; 8-bit number
+res     .byte $00         ; 8-bit number
