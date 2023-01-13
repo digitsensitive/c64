@@ -35,12 +35,13 @@ loop    jsr add
 ; perform addition (Info: 256 * high_byte + low_byte)
 
 add     clc             ; clear carry bit
-        lda op1         ; load number 1
-        adc op2         ; add number 2 to number 1
-        sta res         ; store lo-byte
-        lda res+1       ; load hi-byte
+        cld             ; clear decimal bit
+        lda op1         ; load operand 1 in accumulator
+        adc op2         ; add operand 2 to operand 1
+        sta res         ; store result at address res (lo-byte of result)
+        lda res+1       ; load res+1 (hi-byte of result)
         adc #$00        ; add carry
-        sta res+1       ; store hi-byte
+        sta res+1       ; store result at address res+1 (hi-byte of result)
         rts
 
 ; print result to screen using LINPRT routine
