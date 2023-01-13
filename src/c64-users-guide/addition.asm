@@ -15,7 +15,7 @@
 ;   the binary mode, so you should clear the decimal mode bit/flag with
 ;   the instruction 'cld' before doing any addition
 ;
-; Here is the example in BASIC:
+; Example in BASIC:
 ; PRINT 2+2
 ; ==========================================================
 
