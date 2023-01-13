@@ -44,6 +44,6 @@ print   ldx res
 
 ; data
 
-op1     .byte $FD         ; 8-bit number
-op2     .byte $02         ; 8-bit number
-res     .byte $00         ; 8-bit number
+op1     .byte $FD       ; 8-bit number
+op2     .byte $02       ; 8-bit number
+res     .byte $00       ; 8-bit number
