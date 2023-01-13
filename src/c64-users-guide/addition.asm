@@ -1,6 +1,6 @@
 ; ==========================================================
 ; COMMODORE 64 - Examples in 6502 Assembly language
-; © Digitsensitive; digit.sensitivee@gmail.com;
+; © Digitsensitive (digit.sensitivee@gmail.com)
 ; C64 User's Guide - Getting Started: Print Addition
 ;
 ; This example shows how to perform addition in assembly language.
@@ -23,7 +23,7 @@
 
 ; clear screen
 
-clhome  lda #147        ; load accumulator with char CLR HOME
+cls     lda #147        ; load accumulator with char CLR HOME
         jsr $ffd2       ; CHROUT, kernal rountine
                         ; send character in accumulator to screen
         
