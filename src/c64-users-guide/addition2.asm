@@ -1,15 +1,21 @@
 ; ==========================================================
 ; COMMODORE 64 - Examples in 6502 Assembly language
-; © Digitsensitive; digit.sensitivee@gmail.com;
+; © Digitsensitive (digit.sensitivee@gmail.com)
 ; C64 User's Guide - Getting Started: Print Addition
 ;
 ; This example shows how to perform addition in assembly language.
 ; In this example we perform addition of two 16-bit numbers.
-; The result is  stored in an 16-bit number.
+; The result is stored in an 16-bit number.
 ; So the maximum number is 65535 (a total of 65536 values, 0-65535).
 ; Adding 1 to 65535 will wrap to zero.
 ;
-; Here is the example in BASIC:
+; Remember:
+; * There is no way to add without carry
+; * Decide if binary or decimal mode: In this example we use
+;   the binary mode, so you should clear the decimal mode bit/flag with
+;   the instruction 'cld' before doing any addition
+;
+; Example in BASIC:
 ; PRINT 2+2
 ; ==========================================================
 
@@ -17,7 +23,7 @@
 
 ; clear screen
 
-clhome  lda #147        ; load accumulator with char CLR HOME
+cls     lda #147        ; load accumulator with char CLR HOME
         jsr $ffd2       ; CHROUT, kernal rountine
                         ; send character in accumulator to screen
         
@@ -28,13 +34,14 @@ loop    jsr add
 
 ; perform addition
 
-add     clc             ; always clear carry before addition
-        lda num1        ; load lo-byte of number 1
-        adc num2        ; add lo-byte of number 2 to lo-byte of number 1
-        sta result      ; store lo-byte
-        lda num1+1      ; load hi-byte of number 1
-        adc num2+1      ; add hi-byte of number 2 to hi-byte of number 1
-        sta result+1    ; store hi-byte
+add     clc             ; clear carry bit
+        cld             ; clear decimal bit
+        lda op1         ; load lo-byte of number 1
+        adc op2         ; add lo-byte of number 2 to lo-byte of number 1
+        sta res         ; store lo-byte
+        lda op1+1       ; load hi-byte of number 1
+        adc op2+1       ; add hi-byte of number 2 to hi-byte of number 1
+        sta res+1       ; store hi-byte
         rts
 
 ; print result to screen using LINPRT routine
@@ -46,6 +53,6 @@ print   ldx result
 
 ; data
 
-num1    .byte $FF,$00     ; 16-bit number
-num2    .byte $05,$00     ; 16-bit number
-result  .byte $00,$00     ; 16-bit number
+op1     .byte $FF,$00   ; 16-bit number
+op2     .byte $05,$00   ; 16-bit number
+res     .byte $00,$00   ; 16-bit number
