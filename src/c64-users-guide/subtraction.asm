@@ -11,9 +11,10 @@
 ;
 ; Remember:
 ; * SEC means "set carry to 1", which indicates a "no-borrow" condition
-; * There is no way to subtract without the carry which works as an inverse
-;   borrow. i.e, to subtract you set the carry before the operation.
-;   If the carry is cleared by the operation, it indicates a borrow occurred.
+; * There is no way to subtract without carry
+; * The carry in subtraction works as an inverse borrow, you set the carry
+;   before the operation. If the carry is cleared by the operation, it
+;   indicates a borrow occurred
 ; * Decide if binary or decimal mode: In this example we use
 ;   the binary mode, so you should clear the decimal mode bit/flag with
 ;   the instruction 'cld' before doing any subtraction
