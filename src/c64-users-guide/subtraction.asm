@@ -1,22 +1,25 @@
 ; ==========================================================
 ; COMMODORE 64 - Examples in 6502 Assembly language
 ; © Digitsensitive (digit.sensitivee@gmail.com)
-; C64 User's Guide - Getting Started: Print Addition
+; C64 User's Guide - Getting Started: Print Subtraction
 ;
-; This example shows how to perform addition in assembly language.
-; In this example we perform addition of two 16-bit numbers.
+; This example shows how to perform subtraction in assembly language.
+; In this example we perform subtraction of two 16-bit numbers.
 ; The result is stored in an 16-bit number.
 ; So the maximum number is 65535 (a total of 65536 values, 0-65535).
-; Adding 1 to 65535 will wrap to zero.
+; Subtracting 1 to 0 will wrap to 65535.
 ;
 ; Remember:
-; * There is no way to add without carry
+; * SEC means "set carry to 1", which indicates a "no-borrow" condition
+; * There is no way to subtract without the carry which works as an inverse
+;   borrow. i.e, to subtract you set the carry before the operation.
+;   If the carry is cleared by the operation, it indicates a borrow occurred.
 ; * Decide if binary or decimal mode: In this example we use
 ;   the binary mode, so you should clear the decimal mode bit/flag with
-;   the instruction 'cld' before doing any addition
+;   the instruction 'cld' before doing any subtraction
 ;
 ; Example in BASIC:
-; PRINT 255+5
+; PRINT 10-2
 ; ==========================================================
 
         *=$02a7         ; sys 679 [up to $02FF (767), 88 bytes]
@@ -26,22 +29,22 @@
 cls     lda #147        ; load accumulator with char CLR HOME
         jsr $ffd2       ; CHROUT, kernal rountine
                         ; send character in accumulator to screen
-        
+
 ; main loop
 
-loop    jsr add
+loop    jsr sub
         jsr print
 
-; perform addition
 
-add     clc             ; clear carry bit
+; perform subtraction
+
+sub     sec             ; set carry bit to 1
         cld             ; clear decimal bit
         lda op1         ; load operand 1 (lo-byte) in accumulator
-        adc op2         ; add lo-byte of operand 2 to lo-byte of operand 1
+        sbc op2         ; sub lo-byte of operand 2 from lo-byte of operand 1
         sta res         ; store result at address res (lo-byte of result)
         lda op1+1       ; load operand 1 (hi-byte) in accumulator
-        adc op2+1       ; add hi-byte of operand 2 to hi-byte of operand 1
-                        ; carry is also added if one
+        sbc op2+1       ; sub hi-byte of operand 2 from hi-byte of operand 1
         sta res+1       ; store result at address res+1 (hi-byte of result)
         rts
 
@@ -54,6 +57,6 @@ print   ldx res
 
 ; data
 
-op1     .byte $FF,$00   ; 16-bit number
-op2     .byte $05,$00   ; 16-bit number
+op1     .byte $0a,$00   ; 16-bit number
+op2     .byte $02,$00   ; 16-bit number
 res     .byte $00,$00   ; 16-bit number

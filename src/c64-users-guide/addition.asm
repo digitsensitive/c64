@@ -16,7 +16,7 @@
 ;   the instruction 'cld' before doing any addition
 ;
 ; Example in BASIC:
-; PRINT 2+2
+; PRINT 253+2
 ; ==========================================================
 
         *=$02a7         ; sys 679 [up to $02FF (767), 88 bytes]
