@@ -36,23 +36,24 @@ loop    jsr add
 
 add     clc             ; clear carry bit
         cld             ; clear decimal bit
-        lda op1         ; load lo-byte of number 1
-        adc op2         ; add lo-byte of number 2 to lo-byte of number 1
-        sta res         ; store lo-byte
-        lda op1+1       ; load hi-byte of number 1
-        adc op2+1       ; add hi-byte of number 2 to hi-byte of number 1
-        sta res+1       ; store hi-byte
+        lda op1         ; load operand 1 (lo-byte of result) in accumulator
+        adc op2         ; add lo-byte of operand 2 to lo-byte of operand 1
+        sta res         ; store result at address res (lo-byte of result)
+        lda op1+1       ; load operand 1 (hi-byte of result) in accumulator
+        adc op2+1       ; add hi-byte of operand 2 to hi-byte of operand 1
+                        ; carry is also added if one
+        sta res+1       ; store result at address res+1 (hi-byte of result)
         rts
 
 ; print result to screen using LINPRT routine
 
-print   ldx result
-        lda result+1
+print   ldx res
+        lda res+1
         jsr $bdcd
         rts
 
 ; data
 
-op1     .byte $FF,$00   ; 16-bit number
-op2     .byte $05,$00   ; 16-bit number
+op1     .byte $FF,$00   ; 16-bit number (decimal: 255)
+op2     .byte $05,$00   ; 16-bit number (decimal: 5)
 res     .byte $00,$00   ; 16-bit number
