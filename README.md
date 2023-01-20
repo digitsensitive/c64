@@ -70,7 +70,7 @@ Whether you use this project, have learned something from it, or just like it, p
 
 [MIT License](https://opensource.org/licenses/mit-license.php)
 
-Copyright (c) 2020 - 2022 digitsensitive <digit.sensitivee@gmail.com>
+Copyright (c) 2020 - 2023 digitsensitive <digit.sensitivee@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
