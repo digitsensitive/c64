@@ -64,7 +64,8 @@ An extra emulator is provided for C64 expanded with the CMD SuperCPU.
 
 ## Buy me a coffee
 
-Whether you use this project, have learned something from it, or just like it, please consider supporting it by [buying me a coffee](https://www.buymeacoffee.com/JZDVjsT26).
+Whether you use this project, have learned something from it, or just like it,
+please consider supporting it by [buying me a coffee](https://www.buymeacoffee.com/JZDVjsT26).
 
 ## License
 
