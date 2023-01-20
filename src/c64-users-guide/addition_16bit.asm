@@ -40,7 +40,7 @@ add     clc             ; clear carry bit
         adc op2         ; add lo-byte of operand 2 to lo-byte of operand 1
         sta res         ; store result at address res (lo-byte of result)
         lda op1+1       ; load operand 1 (hi-byte) in accumulator
-        adc op2+1       ; add hi-byte of operand 2 to hi-byte of operand 1
+        adc op2+1       ; add operand 2 (hi-byte) to operand 1 (hi-byte)
                         ; carry is also added if one
         sta res+1       ; store result at address res+1 (hi-byte of result)
         rts
