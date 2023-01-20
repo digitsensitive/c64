@@ -1,5 +1,11 @@
 # NOTES
 
+## Instruction Types
+
+- Data Transfer Instructions: LDA, STA, ...
+- Arithmetic Instructions: ADC, SBC, ...
+- Status Manipulation or Control Instructions: CLC, SEC, ...
+
 ## Addressing
 
 13 paths to success - the 6510 addressing modes
