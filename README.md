@@ -4,9 +4,13 @@
 
 ## Installation
 
-1. Allow `tmpx` to be executed as program: `sudo chmod +x PATH/tmpx`
+1. Setup Turbo Macro Pro Cross Assembler (TMPx)
+   1.1. MacOS (`vendors/tmpx/tmpx`): Allow `tmpx` to be executed as program: `sudo chmod +x PATH/tmpx`
+   1.2. Windows (`vendors/tmpx/TMPx.exe`)
 2. Compile all `*.asm` files to `*.prg` files in `src` with `make convert`
-3. Load specific `*.prg` into C64 Emulator with `make load name={PATH_TO_PROGRAM_NAME}` (f.e. PATH_TO_PROGRAM_NAME = examples/printString.prg)
+3. Load specific program into C64 Emulator VICE
+   3.1. `make load name={PATH_TO_PROGRAM_NAME}` (f.e. PATH_TO_PROGRAM_NAME = examples/printString.prg)
+   3.2. `sys` call in the C64 Emulator, specified in the program file (f.e. sys 679)
 4. Delete all `*.prg` files in `src` with `make clean`
 
 ## Tools
@@ -26,6 +30,8 @@ cycle and leaves more complex workflows to fuller featured IDEs, such as Visual 
 [TMPx](http://turbo.style64.org) (pronounced "T-M-P cross") is the multiplatform cross assembler version of Turbo Macro Pro, itself derived from the famous Turbo Assembler series for the
 native C64. TMPx was the first cross assembler released with full support for the
 syntax of Turbo Macro Pro (i.e. same as the original Turbo Assembler Macro).
+
+Current version: TMPx v1.0, released 04/29/2012 by The Wiz/Style and Elwix/Style
 
 ### C1541
 
