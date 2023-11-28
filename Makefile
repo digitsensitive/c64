@@ -4,11 +4,22 @@ currentDirectory = $(abspath .)
 # Get all the *.asm files
 asmFiles = $(wildcard $(currentDirectory)/src/**/*.asm)
 
-# Set path of Turbo Macro Pro Cross Assembler (TMPx)
-TMPX = $(currentDirectory)/vendors/tmpx/tmpx 
-
-# Set path of C64 emulator (x64sc)
-X64SC := /Applications/VICE/x64sc.app/Contents/MacOS/x64sc
+# Set path of Turbo Macro Pro Cross Assembler (TMPx) and C64 emulator (x64sc)
+# depending on the current OS
+ifeq ($(OS),Windows_NT)
+	TMPX = $(currentDirectory)/vendors/tmpx/TMPx.exe
+    X64SC := C:\VICE\x64sc.exe
+else
+    UNAME_S := $(shell uname -s)
+    ifeq ($(UNAME_S),Linux)
+		TMPX = $(currentDirectory)/vendors/tmpx/tmpx 
+        X64SC := /Applications/VICE/x64sc.app/Contents/MacOS/x64sc
+    endif
+    ifeq ($(UNAME_S),Darwin)
+		TMPX = $(currentDirectory)/vendors/tmpx/tmpx 
+        X64SC := /Applications/VICE/x64sc.app/Contents/MacOS/x64sc
+    endif
+endif
 
 # Convert all *.asm files to *.prg files
 convert: $(asmFiles:.asm=.prg)
